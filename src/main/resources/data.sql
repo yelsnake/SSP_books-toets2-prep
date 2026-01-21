@@ -118,3 +118,12 @@ values ('Jules', 'Dewael', 'Waterkant 12', 'Hasselt', 'M-HAS24-590-2');
 
 insert into MEMBER (FIRST_NAME, LAST_NAME, ADDRESS, CITY, MEMBER_NUMBER)
 values ('Elise', 'De Ridder', 'Doornstraat 8', 'Leuven', 'M-LEU25-101-0');
+
+insert into MEMBER_LIKES (LIKED_BY_ID, LIKES_ID) values (1, 2);
+insert into MEMBER_LIKES (LIKED_BY_ID, LIKES_ID) values (1, 3);
+insert into MEMBER_LIKES (LIKED_BY_ID, LIKES_ID) values (2, 4);
+insert into MEMBER_LIKES (LIKED_BY_ID, LIKES_ID) values (2, 5);
+insert into MEMBER_LIKES (LIKED_BY_ID, LIKES_ID) values (3, 6);
+insert into MEMBER_LIKES (LIKED_BY_ID, LIKES_ID) values (4, 1);
+insert into MEMBER_LIKES (LIKED_BY_ID, LIKES_ID) values (4, 3);
+insert into MEMBER_LIKES (LIKED_BY_ID, LIKES_ID) values (5, 2);
