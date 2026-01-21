@@ -7,7 +7,10 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,5 +33,12 @@ public class Book {
 
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Author> authors;
+
+    @ManyToMany(mappedBy = "likes")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    //likedBy여야함
+    //@Data 사용시 양방향 관계에서 재귀로 터질 수 있어 exclude 처리가 안전
+    private Set<Member> likedBy = new HashSet<>();
 }
 
