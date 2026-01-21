@@ -1,10 +1,10 @@
 package be.thomasmore.bookserver.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -32,4 +32,14 @@ public class Member {
     @Column(name = "member_number", nullable = false)
     private String memberNumber;
 
+    @ManyToMany
+    // member쪽으로 member.likes가 owner되도록
+    @JoinTable(
+            name = "member_likes",
+            joinColumns = @JoinColumn(name = "liked_by_id"),
+            inverseJoinColumns = @JoinColumn(name = "likes_id")
+    )
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Set<Book> likes = new HashSet<>();
 }
