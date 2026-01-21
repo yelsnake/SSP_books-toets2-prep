@@ -10,6 +10,8 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @Data
+@EqualsAndHashCode(exclude = {"likes"})
+@ToString(exclude = {"likes"})
 @Entity
 public class Member {
 
@@ -32,14 +34,12 @@ public class Member {
     @Column(name = "member_number", nullable = false)
     private String memberNumber;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     // member쪽으로 member.likes가 owner되도록
     @JoinTable(
             name = "member_likes",
             joinColumns = @JoinColumn(name = "liked_by_id"),
             inverseJoinColumns = @JoinColumn(name = "likes_id")
     )
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
     private Set<Book> likes = new HashSet<>();
 }

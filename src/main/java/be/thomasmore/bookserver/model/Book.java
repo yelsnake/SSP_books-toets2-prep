@@ -16,8 +16,8 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @Data
-@EqualsAndHashCode(exclude = {"authors"})
-@ToString(exclude = {"authors"})
+@EqualsAndHashCode(exclude = {"authors", "likedBy"})
+@ToString(exclude = {"authors", "likedBy"})
 @Entity
 public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,11 +34,8 @@ public class Book {
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Author> authors;
 
-    @ManyToMany(mappedBy = "likes")
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
-    //likedBy여야함
-    //@Data 사용시 양방향 관계에서 재귀로 터질 수 있어 exclude 처리가 안전
+    //member가 owner이기 때문에 mappedBy
+    @ManyToMany(mappedBy = "likes", fetch = FetchType.LAZY)
     private Set<Member> likedBy = new HashSet<>();
 }
 
