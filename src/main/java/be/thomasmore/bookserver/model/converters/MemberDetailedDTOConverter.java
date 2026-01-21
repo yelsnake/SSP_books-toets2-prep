@@ -9,12 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class MemberDetailedDTOConverter {
 
-    private final ModelMapper modelMapper;
-
-    public MemberDetailedDTOConverter(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
-
     @Autowired
     private ModelMapper modelMapper;
 
