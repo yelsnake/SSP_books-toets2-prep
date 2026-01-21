@@ -101,3 +101,20 @@ insert into SERIE(NAME) values ('Harry Potter');
 insert into SERIE(NAME) values ('Anderland');
 
 
+insert into MEMBER (FIRST_NAME, LAST_NAME, ADDRESS, CITY, MEMBER_NUMBER)
+values ('Thomas', 'Maes', 'Heideweg 5', 'Antwerpen', 'M-ANT24-101-8');
+
+insert into MEMBER (FIRST_NAME, LAST_NAME, ADDRESS, CITY, MEMBER_NUMBER)
+values ('Fatima', 'Rahmani', 'Kasteelstraat 18', 'Brussel', 'M-BRU24-245-8');
+
+insert into MEMBER (FIRST_NAME, LAST_NAME, ADDRESS, CITY, MEMBER_NUMBER)
+values ('Julien', 'Nguyen', 'Bomenlaan 22', 'Gent', 'M-GEN24-376-4');
+
+insert into MEMBER (FIRST_NAME, LAST_NAME, ADDRESS, CITY, MEMBER_NUMBER)
+values ('Amira', 'El Khouri', 'Zonnelaan 45', 'Mechelen', 'M-MEC24-412-4');
+
+insert into MEMBER (FIRST_NAME, LAST_NAME, ADDRESS, CITY, MEMBER_NUMBER)
+values ('Jules', 'Dewael', 'Waterkant 12', 'Hasselt', 'M-HAS24-590-2');
+
+insert into MEMBER (FIRST_NAME, LAST_NAME, ADDRESS, CITY, MEMBER_NUMBER)
+values ('Elise', 'De Ridder', 'Doornstraat 8', 'Leuven', 'M-LEU25-101-0');
